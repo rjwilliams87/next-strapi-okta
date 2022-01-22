@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizations",
+  "info": {
+    "singularName": "organization",
+    "pluralName": "organizations",
+    "displayName": "Organization"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "organization_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "organization_name": {
+      "type": "string",
+      "required": true
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team.team",
+      "mappedBy": "organization"
+    }
+  }
+}
